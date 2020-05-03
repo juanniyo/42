@@ -10,6 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/********************
+ * función que muestra un número pasado como parametro. la función
+ * debera ser capaz de mostrar todos los valores posibles en una 
+ * variable de tipo int.
+ * *****************/
+
 #include <unistd.h>
 
 void	ft_putchar(char c);

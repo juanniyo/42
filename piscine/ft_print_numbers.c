@@ -10,6 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/********************
+ * función que muestra todos los digitos sobre una sola línea, 
+ * en orden creciente.
+ * *****************/
+
 #include <unistd.h>
 
 void	ft_print_numbers(void)

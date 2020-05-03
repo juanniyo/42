@@ -10,6 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/********************
+ * función que muestra todas las combinaciones de n dígitos en orden
+ * creciente.
+ * n sera tal que: 0 < n < 10
+ * *****************/
+
 #include <unistd.h>
 
 void	ft_print_combn(int n)

@@ -10,6 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/********************
+ * función que muestra 'N' o 'P' en función del signo del entero que se
+ * haya pasado como parametro. Si n es negativo muestra 'N'. Si m es 
+ * positivo o nulo mostrar 'P'.
+ * ****************/
+
 #include <unistd.h>
 
 void	ft_is_negative(int n)

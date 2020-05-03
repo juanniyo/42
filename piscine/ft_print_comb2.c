@@ -10,6 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/********************
+ * función que muestra todas las combinaciones posibles de dos números
+ * entre 0 y 99, en orden creciente.
+ * *****************/
+
 #include <unistd.h>
 
 void	ft_print_comb2(void)

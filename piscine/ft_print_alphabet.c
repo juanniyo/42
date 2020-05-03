@@ -10,6 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/********************
+ * función que muestra el alfabeto en minúsculas sobre una sola linea,
+ * en orden creciente, a partir de la letra 'a'.
+ * *****************/
+
 #include <unistd.h>
 
 void	ft_print_alphabet(void)

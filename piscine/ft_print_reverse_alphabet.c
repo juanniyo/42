@@ -10,6 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/********************
+ * función que muestra el alfabeto en minúsculas sobre una sola linea, en
+ * orden decreciente, a partir de la letra 'z'.
+ * *****************/
+
 #include <unistd.h>
 
 void	ft_print_reverse_alphabet(void)

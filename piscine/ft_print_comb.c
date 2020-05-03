@@ -10,6 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/********************
+ * función que muestra, en orden creciente, todas las combinaciones
+ * posibles de tres dígitos distintos en orden creciente -sí, la 
+ * repetición es voluntaria.
+ * *****************/
+
 #include <unistd.h>
 
 void	ft_print_comb(void)

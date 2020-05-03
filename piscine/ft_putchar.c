@@ -10,6 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/********************
+ * función que muestra el caracter pasado como parámetro.
+ *******************/
+
 #include <unistd.h>
 
 void	ft_putchar(char c)
