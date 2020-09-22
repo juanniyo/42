@@ -12,17 +12,23 @@ char	*ft_strchr(const char *s, int c)
 
 int	get_next_line(int fd, char **line)
 {
-	char	buf[BUFFER_SIZE + 1];
-	int		byte_was_read;
+	static char	*sc_file[MAX];	//guarda los contenidos del búfer de lectura
+	char		buf[BUFFER_SIZE + 1];	//guarda los elementos leídos del fichero
+	char		*tmp;
+	int			byte_was_read;
 
-	while ((byte_was_read = read(fd, buf, BUFFER_SIZE)))
+	if ((fd < 0) || (line == 0) || (BUFFER_SIZE <= 0 || read(fd, buf, 0)))
+		return (-1);
+	while ((byte_was_read = read(fd, buf, BUFFER_SIZE)) > 0)
 	{
-		if (ft_strchr(buf, '\n'))
-		{
-			break;
-		}
 		buf[byte_was_read] = '\0';
-		*line = ft_strjoin(*line, buf);
+		if (ft_strchr(buf, '\n'))
+			break;
+		else
+		{
+			sc_file[fd] = (*line = ft_strjoin(*line, buf));
+		}
+
 	}
 	return (0);
 }
@@ -35,7 +41,6 @@ int	main(void)
 	fd = open("text", O_RDONLY);
 	get_next_line(fd, &line);
 	printf("%s\n\n", line);
-
-	get_next_line(fd, &line);
-	printf("%s\n", line);
+	free(line);
+	system("leaks a.out");
 }
