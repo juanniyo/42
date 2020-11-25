@@ -1,35 +1,45 @@
 #include "get_next_line.h"
 
-char	*ft_strchr(const char *s, int c)
+int	salto_linea(const char *s, int c)
 {
-	while (*s != (char)c)
-	{
-		if (!*s++)
-			return (0);
-	}
-	return (char *)s;
+	int	i;
+
+	i = 0;
+	while (s[i] && s[i] != (char)c)
+		i++;
+	if (s[i] != (char)c)
+		return (-1);
+	return (i);
 }
 
 int	get_next_line(int fd, char **line)
 {
-	static char	*sc_file[MAX];	//guarda los contenidos del búfer de lectura
+	static char	*sc_file;	//guarda los contenidos del búfer de lectura
 	char		buf[BUFFER_SIZE + 1];	//guarda los elementos leídos del fichero
 	char		*tmp;
 	int			byte_was_read;
+	int			i;
 
 	if ((fd < 0) || (line == 0) || (BUFFER_SIZE <= 0 || read(fd, buf, 0)))
 		return (-1);
-	while ((byte_was_read = read(fd, buf, BUFFER_SIZE)) > 0)
+	if (sc_file && (((i = salto_linea(sc_file, '\n')) != -1)))
+
+	while (((byte_was_read = read(fd, buf, BUFFER_SIZE)) > 0))
 	{
 		buf[byte_was_read] = '\0';
-		if (ft_strchr(buf, '\n'))
-			break;
+		if (!sc_file)
+			sc_file = ft_strdup(buf);
 		else
 		{
-			sc_file[fd] = (*line = ft_strjoin(*line, buf));
+			tmp = ft_strjoin(sc_file, buf);
+			//free(sc_file);
+			sc_file = tmp;
 		}
-
+		//printf("%s", sc_file);
+		if (*sc_file == '\n')
+			break;
 	}
+
 	return (0);
 }
 

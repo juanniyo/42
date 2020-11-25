@@ -9,7 +9,7 @@
 # include <unistd.h>
 
 #ifndef BUFFER_SIZE
-# define BUFFER_SIZE 1
+# define BUFFER_SIZE 40
 # endif
 
 #ifndef MAX
